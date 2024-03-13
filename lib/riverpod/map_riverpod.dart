@@ -14,6 +14,7 @@ final locationProvider = StateNotifierProvider<LocationNotifier, LocationData>(
   (ref) => LocationNotifier(),
 );
 
+// ===========> LOCATION NOTIFIER
 class LocationNotifier extends StateNotifier<LocationData> {
   LocationNotifier() : super(LocationData());
   Future<void> determinePositionAndAddress() async {
@@ -24,16 +25,20 @@ class LocationNotifier extends StateNotifier<LocationData> {
         permission = await Geolocator.requestPermission();
       }
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+          desiredAccuracy: LocationAccuracy.best);
       List<Placemark> placemarks =
           await placemarkFromCoordinates(position.latitude, position.longitude);
-
       state = LocationData(
-        position: LatLng(position.latitude, position.longitude),
-        address: "${placemarks.first.street!}, ${placemarks.first.locality!}",
-      );
+          position: LatLng(position.latitude, position.longitude),
+          // address: "${placemarks.first}"
+          address:
+              "${placemarks.first.street}, ${placemarks.first.subLocality}, ${placemarks.first.locality}, ${placemarks.first.administrativeArea}, ${placemarks.first.isoCountryCode}"
+          // "${placemarks.first.street!}, ${placemarks.first.locality!}, ${placemarks.first.country}",
+          );
     } catch (error) {
       debugPrint('Error getting location: $error');
     }
   }
+
+  void passAddress(String address) {}
 }

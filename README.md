@@ -1,16 +1,13 @@
-# map_assessment
-
-A new Flutter project.
+# map_assessment_blowhorn
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Project Setup ------------->
+2 Screens ----------------> 1. Map Screen 2. Data Screen
+1.Map Screen---------------> ## Require user location (Geolocator, Google Map) ## One button at bottom to navigate on data screen x(Parsing) ## Appbar contin one popup button ## When Clicked on popup button popup should appear to exit from the app.
+--------------------------------------------------------------------------------------------------------------->
+/-\----->2. Data Screen
 
-A few resources to get you started if this is your first Flutter project:
+## submitted by : - Anudeep Lohogaonkar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Thank you !
