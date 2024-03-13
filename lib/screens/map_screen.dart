@@ -48,15 +48,15 @@ class MapScreen extends ConsumerWidget {
                   Icons.arrow_back_ios,
                   size: 20,
                 ))),
-        title: const Text('Blowhorn Assessment'),
+        title: const Text('LocateMe'),
         centerTitle: true,
       ),
       body: locationData.position == null
           ? const Center(child: CircularProgressIndicator())
           : Column(
               children: [
+                // ^_^ TOP ADDRESS ^_^
                 Container(
-                    // margin: const EdgeInsets.symmetric(horizontal: 20),
                     height: MediaQuery.of(context).size.height * 0.050,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
@@ -93,6 +93,7 @@ class MapScreen extends ConsumerWidget {
                 const SizedBox(
                   height: 1,
                 ),
+                // ^_^ GOOGLE MAP ^_^
                 Expanded(
                   child: Stack(
                     children: [
@@ -109,6 +110,7 @@ class MapScreen extends ConsumerWidget {
                           ),
                         },
                       ),
+                      // ^_^ NEXT SCREEN BUTTON ^_^
                       Positioned(
                         bottom: 0,
                         left: 0,

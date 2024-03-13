@@ -1,13 +1,31 @@
-# map_assessment_blowhorn
+# Flutter Map Location
 
-## Getting Started
+## Prerequisites
 
-Project Setup ------------->
-2 Screens ----------------> 1. Map Screen 2. Data Screen
-1.Map Screen---------------> ## Require user location (Geolocator, Google Map) ## One button at bottom to navigate on data screen x(Parsing) ## Appbar contin one popup button ## When Clicked on popup button popup should appear to exit from the app.
---------------------------------------------------------------------------------------------------------------->
-/-\----->2. Data Screen
+- **Flutter SDK:** Download and install Flutter following the official instructions (https://docs.flutter.dev/get-started/install). Ensure correct setup by running `flutter doctor`.
+- **IDE:** Install your preferred IDE or code editor.
+  - **Recommendation:** Android Studio or Visual Studio Code with the Flutter Extension.
+- **Android Emulator/Simulator or Devices:** Set up an Android emulator (in Android Studio) or iOS Simulator (in Xcode) or connect physical devices.
 
-## submitted by : - Anudeep Lohogaonkar
+## Project Structure
 
-## Thank you !
+** - `lib/`
+** - `api/api.dart` ----------> API
+** - `models/user_model.dart` ------------> Model
+** - `riverpod/api_riverpod.dart`
+** - `riverpod/map_riverpod.dart` ---------------> Controller
+** - `screens/map_screen.dart`
+** - `screens/second_screen.dart`-----------------> View
+** - `pubspec.yaml`
+
+## Running the Project
+
+1.  **Choose Device:** Select an emulator, simulator, or physical device.
+2.  **Run:**
+    ```bash
+    flutter run
+    ```
+
+## Assessment project for @Blowhorn by - Anudeep Lohogaonkar
+
+## Thank You !

@@ -10,11 +10,15 @@ class SecondScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      backgroundColor: Colors.teal.shade100,
+      // ^_^ PASSED ADDRESS ^_^
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.teal.shade100,
         automaticallyImplyLeading: false,
         title: Text(address),
       ),
+      // ^_^ LIST DATA ^_^
       body: FutureBuilder<UserModel>(
         future: ref.read(apiServiceProvider).fetchDataForAddress(address),
         builder: (context, snapshot) {
@@ -24,13 +28,16 @@ class SecondScreen extends ConsumerWidget {
               itemBuilder: (context, index) {
                 final user = snapshot.data!.data![index];
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   child: ListTile(
-                    shape: const BeveledRectangleBorder(
-                        side: BorderSide(color: Colors.teal),
-                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        side: BorderSide(color: Colors.teal.shade800)),
                     title: Text("${user.firstName!} ${user.lastName!}"),
-                    leading: Image.network(user.avatar!),
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(user.avatar!),
+                    ),
                   ),
                 );
               },
