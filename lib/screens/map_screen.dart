@@ -10,7 +10,6 @@ class MapScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Initialize location fetching on widget build
     ref.read(locationProvider.notifier).determinePositionAndAddress();
 
     final locationData = ref.watch(locationProvider);
